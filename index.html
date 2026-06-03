@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playfull Minds - Fun Learning Games for Kids</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-4xl font-brand text-brand">
+                Playfull Minds
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-brand transition duration-300">About</a>
+                <a href="#games" class="text-gray-600 hover:text-brand transition duration-300">Games</a>
+                <a href="story-starter.html" class="text-gray-600 hover:text-brand transition duration-300">Story Starter</a>
+                <a href="rewards.html" class="text-gray-600 hover:text-brand transition duration-300">Rewards</a>
+                <a href="dashboard.html" class="text-gray-600 hover:text-brand transition duration-300">Dashboard</a>
+                <a href="#contact" class="text-gray-600 hover:text-brand transition duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 text-gray-600 hover:text-brand">About</a>
+            <a href="#games" class="block py-2 text-gray-600 hover:text-brand">Games</a>
+            <a href="story-starter.html" class="block py-2 text-gray-600 hover:text-brand">Story Starter</a>
+            <a href="rewards.html" class="block py-2 text-gray-600 hover:text-brand">Rewards</a>
+            <a href="dashboard.html" class="block py-2 text-gray-600 hover:text-brand">Dashboard</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-brand">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white section-padding">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-brand mb-4 drop-shadow-lg text-white">Where Learning is an Adventure!</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-white">
+                Dive into a world of fun educational games designed to spark curiosity and build skills in math, science, language, and more!
+            </p>
+            <a href="#games" class="bg-yellow-400 text-gray-800 font-bold py-4 px-8 rounded-full text-xl btn-play pulse-animate shadow-xl">
+                Play Now!
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-brand text-center text-gray-800 mb-12">Why Us? 🤔</h2>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div class="p-6">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-indigo-100 flex items-center justify-center">
+                        <svg class="w-14 h-14 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Fun! 🎨</h3>
+                </div>
+                <div class="p-6">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
+                        <svg class="w-14 h-14 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Learn! 🧠</h3>
+                </div>
+                <div class="p-6">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full bg-rose-100 flex items-center justify-center">
+                        <svg class="w-14 h-14 text-rose-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 20.944a11.955 11.955 0 019-4.055 11.955 11.955 0 019 4.055 12.02 12.02 0 00-2.382-8.944z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Safe! 🛡️</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section-padding">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-brand text-center text-gray-800 mb-16">Explore Our Games</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-cyan-400 to-blue-500 p-6 text-center">
+                        <div class="game-icon text-5xl text-white">🔢</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Math Wizards</h3>
+                        <p class="text-gray-600 mb-6">Solve puzzles and defeat monsters with the power of numbers! Perfect for ages 5-10.</p>
+                        <a href="math-quiz.html" class="w-full text-center bg-blue-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Math Wizards</span></a>
+                    </div>
+                </div>
+
+                <!-- Game Card 2: Language -->
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-amber-400 to-orange-500 p-6 text-center">
+                         <div class="game-icon text-5xl text-white">📚</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Word Quest</h3>
+                        <p class="text-gray-600 mb-6">Embark on a journey to build vocabulary and master spelling in a magical world. Ages 6-12.</p>
+                        <a href="spelling.html" class="w-full text-center bg-orange-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Word Quest</span></a>
+                    </div>
+                </div>
+
+                <!-- Game Card 3: Shape Sorter -->
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-lime-400 to-green-500 p-6 text-center">
+                         <div class="game-icon text-5xl text-white">🔺</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Shape Sorter</h3>
+                        <p class="text-gray-600 mb-6">Match the shapes to their correct slots and learn about different geometric forms.</p>
+                        <a href="shape-sorter.html" class="w-full text-center bg-green-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Shape Sorter</span></a>
+                    </div>
+                </div>
+                
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-purple-400 to-indigo-500 p-6 text-center">
+                         <div class="game-icon text-5xl text-white">🔄</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Pattern Sequence</h3>
+                        <p class="text-gray-600 mb-6">Complete the pattern by choosing the correct next item. A fun way to learn about sequences.</p>
+                        <a href="pattern-sequence.html" class="w-full text-center bg-indigo-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Pattern Sequence</span></a>
+                    </div>
+                </div>
+                
+                <!-- Game Card 6: Word Scramble -->
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-teal-400 to-cyan-500 p-6 text-center">
+                         <div class="game-icon text-5xl text-white">🔤</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Word Scramble</h3>
+                        <p class="text-gray-600 mb-6">Unscramble the letters to form a word. A fun way to improve your spelling.</p>
+                        <a href="word-scramble.html" class="w-full text-center bg-cyan-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Word Scramble</span></a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white shadow-lg overflow-hidden fade-in">
+                    <div class="card-header bg-gradient-to-r from-red-400 to-yellow-500 p-6 text-center">
+                         <div class="game-icon text-5xl text-white">🤔</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-3">Memory Match</h3>
+                        <p class="text-gray-600 mb-6">Test your memory by matching pairs of cards. A classic game for all ages.</p>
+                        <a href="memory-match.html" class="w-full text-center bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg btn-play"><span>Play Memory Match</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-brand text-gray-800 mb-8">Questions? 💬</h2>
+            <a href="mailto:hello@playfullminds.com" class="bg-blue-500 text-white font-bold py-4 px-8 rounded-full text-lg btn-play">
+                Email Us 📧
+            </a>
+            <button id="feedback-btn" class="bg-yellow-400 text-gray-800 font-bold py-4 px-8 rounded-full text-lg btn-play ml-4">
+                Feedback
+            </button>
+        </div>
+    </section>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <h2 class="text-2xl font-bold mb-4">Feedback</h2>
+            <form id="feedback-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border rounded-lg" required></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" id="cancel-feedback-btn" class="bg-gray-400 text-white font-bold py-2 px-4 rounded-lg mr-2">Cancel</button>
+                    <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded-lg">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Playfull Minds. Happy Learning! 😊</p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz - Playfull Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/games.css">
+</head>
+<body class="game-body">
+
+    <!-- Unified Navigation -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-brand text-brand">Playfull Minds</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-brand font-medium">Games</a>
+                <a href="dashboard.html" class="text-gray-600 hover:text-brand font-medium">Progress</a>
+                <a href="rewards.html" class="text-gray-600 hover:text-brand font-medium">Rewards</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="game-container container mx-auto px-6 py-8 text-center">
+        <h1 class="text-5xl md:text-7xl font-brand text-blue-600 mb-4 game-title">Math Quiz 🔢</h1>
+        <p class="text-lg text-gray-600 mb-8 game-subtitle">Solve the puzzles! 🧩</p>
+
+        <div class="game-panel max-w-4xl mx-auto">
+            <div class="stats-grid">
+                <div class="stat-chip">
+                    <span id="score">Score: 0</span>
+                </div>
+                <div class="stat-chip">
+                    <span id="stars">Stars: 0</span>
+                </div>
+                <div class="stat-chip">
+                    <span id="level">Level: 1</span>
+                </div>
+            </div>
+            <div id="timer" class="timer-chip">Time: 10</div>
+            <div id="quiz" class="quiz-shell">
+                <p id="question" class="game-question"></p>
+                <input type="text" id="answer" class="game-input" placeholder="Type your answer...">
+                <button id="submit" class="primary-btn">Submit</button>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link" title="Back to All Games" aria-label="Back to All Games">
+            <span aria-hidden="true">⬅️</span>
+            <span>Back to All Games</span>
+        </a>
+    </div>
+
+    <div id="character-container" class="fixed bottom-4 right-4 character-companion">
+        <object id="character-svg" type="image/svg+xml" data="character.svg" width="100" height="100"></object>
+    </div>
+    <div id="game-modal" class="modal-overlay">
+        <div class="modal-content" id="modal-content">
+            <div class="modal-icon" id="modal-icon"></div>
+            <h2 class="modal-title" id="modal-title"></h2>
+            <p class="modal-message" id="modal-message"></p>
+            <button id="modal-btn" class="primary-btn">Continue</button>
+        </div>
+    </div>
+    <script src="js/game-utils.js"></script>
+    <script src="js/math-quiz.js"></script>
+</body>
+</html>

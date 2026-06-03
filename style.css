@@ -1,0 +1,363 @@
+/* General Body Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans:wght@700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Very light blue background */
+    position: relative;
+}
+
+/* Enhanced Geometric Hexagonal Pattern Background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(144,202,249,0.2)' stroke-width='1'%3E%3Cpath d='M60 0 L105 26 L105 78 L60 104 L15 78 L15 26 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 120px 104px;
+    background-position: 0 0;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Add offset pattern for proper hexagonal tiling */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='120' height='104' viewBox='0 0 120 104' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(144,202,249,0.2)' stroke-width='1'%3E%3Cpath d='M60 0 L105 26 L105 78 L60 104 L15 78 L15 26 Z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 120px 104px;
+    background-position: 60px 52px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content is above the pattern */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Custom Font for Branding */
+.font-brand {
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+/* Hero Section Background with Light Blue and Geometric Pattern */
+.hero-bg {
+    background: linear-gradient(135deg, #90caf9 0%, #42a5f5 100%); /* Lighter blue to medium blue gradient */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add geometric shapes overlay to hero */
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.15); /* Slightly more visible white overlay */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(15deg);
+}
+
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.12); /* Slightly more visible white overlay */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transform: rotate(-20deg);
+}
+
+/* Game Card Styling and Hover Effect */
+.game-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(66, 165, 245, 0.12);
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(238, 249, 255, 0.85));
+    position: relative;
+    overflow: hidden;
+}
+
+.game-card::before,
+.game-card::after {
+    content: '';
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(66,165,245,0.25));
+    filter: blur(0px);
+    opacity: 0.5;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 0;
+}
+
+.game-card::before {
+    top: -40px;
+    right: -40px;
+}
+
+.game-card::after {
+    bottom: -50px;
+    left: -50px;
+    background: radial-gradient(circle at 70% 70%, rgba(255,255,255,0.8), rgba(255,215,0,0.25));
+}
+
+.game-card:hover::before {
+    transform: translate(-10px, 10px) scale(1.1);
+    opacity: 0.8;
+}
+
+.game-card:hover::after {
+    transform: translate(15px, -15px) scale(1.1);
+    opacity: 0.75;
+}
+
+.game-card:hover {
+    transform: translateY(-14px) scale(1.03);
+    box-shadow: 0 30px 35px -16px rgba(54, 105, 163, 0.35);
+}
+
+/* Button Hover Effect */
+.btn-play {
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-play:hover {
+    transform: scale(1.05);
+    box-shadow: 0 7px 14px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.08);
+}
+
+/* Pulsing Animation for Buttons */
+.pulse-animate {
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 7px 14px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.08);
+    }
+}
+
+/* New styles for a more polished look */
+.card-header {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 160px;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    inset: 16px;
+    border-radius: 20px;
+    border: 2px dashed rgba(255, 255, 255, 0.35);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .card-header::after {
+    opacity: 1;
+}
+
+.game-card .p-8 {
+    background-color: transparent;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.game-card h3 {
+    line-height: 1.2;
+}
+
+.game-card p {
+    flex: 1;
+}
+
+.game-card .btn-play {
+    margin-top: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+.game-card .btn-play::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,0.35), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.game-card .btn-play:hover::after {
+    opacity: 1;
+}
+
+.game-card .btn-play span {
+    position: relative;
+    z-index: 1;
+}
+
+#games .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+}
+
+#games {
+    background: radial-gradient(circle at top, rgba(66, 165, 245, 0.08), transparent 55%), radial-gradient(circle at bottom, rgba(255, 213, 79, 0.12), transparent 60%);
+}
+
+.game-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: inset 0 0 12px rgba(255,255,255,0.4);
+    backdrop-filter: blur(6px);
+    animation: floatIcon 4s ease-in-out infinite;
+}
+
+#games .game-card:nth-child(2n) .game-icon { animation-delay: 0.3s; }
+#games .game-card:nth-child(3n) .game-icon { animation-delay: 0.6s; }
+
+.game-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.text-brand {
+    color: #42a5f5; /* A vibrant light blue for the brand */
+}
+
+
+/* Geometric accent for sections */
+#games::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(144, 202, 249, 0.15); /* Lighter blue accent */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 0;
+}
+
+#games {
+    position: relative;
+}
+
+#games > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Add geometric lines to sections */
+#about {
+    position: relative;
+}
+
+#about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(144, 202, 249, 0.3)); /* Lighter blue accent */
+    transform: rotate(-45deg);
+    transform-origin: right bottom;
+}
+
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(144, 202, 249, 0.3), transparent); /* Lighter blue accent */
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+/* Spacing utility classes */
+.section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.section-padding-sm {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .section-padding-sm {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    #games .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+

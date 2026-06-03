@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Playfull Minds - Mobile Edition</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile-specific overrides */
+        body {
+            padding-bottom: 80px; /* Space for bottom nav */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: color 0.3s;
+        }
+
+        .nav-item.active {
+            color: #42a5f5;
+        }
+
+        .nav-icon {
+            font-size: 1.5rem;
+            margin-bottom: 2px;
+        }
+
+        .mobile-hero {
+            padding: 4rem 1.5rem 3rem;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .game-grid-mobile {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        @media (min-width: 640px) { /* Tablet */
+            .game-grid-mobile {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .category-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem;
+            gap: 1rem;
+            scrollbar-width: none;
+        }
+
+        .category-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-pill {
+            white-space: nowrap;
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .category-pill.active {
+            background: #42a5f5;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc]">
+
+    <!-- Simple Mobile Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 px-6 py-4 flex justify-center items-center shadow-sm">
+        <h1 class="text-3xl font-brand text-brand">Playfull Minds</h1>
+    </header>
+
+    <!-- Mobile Hero -->
+    <section class="hero-bg mobile-hero text-white text-center">
+        <h2 class="text-4xl font-brand mb-3">Hi, Little Explorer! 👋</h2>
+        <p class="text-lg opacity-90 mb-6">Ready for a magical learning adventure?</p>
+        <div class="bg-white/20 backdrop-blur-md rounded-2xl p-4 inline-block">
+            <span class="text-yellow-300 font-bold">⭐ <span id="mobile-stars">0</span> Stars Collected!</span>
+        </div>
+    </section>
+
+    <!-- Category Filter (Common in Mobile Apps) -->
+    <div class="category-scroll mt-4">
+        <div class="category-pill active">All Games</div>
+        <div class="category-pill">Math 🔢</div>
+        <div class="category-pill">Words 📚</div>
+        <div class="category-pill">Shapes 🔺</div>
+        <div class="category-pill">Memory 🧠</div>
+    </div>
+
+    <!-- Games Section -->
+    <main class="game-grid-mobile">
+        <!-- Math Wizards -->
+        <div class="game-card bg-white shadow-md overflow-hidden animate__animated animate__fadeIn">
+            <div class="h-32 bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center">
+                <span class="text-5xl">🔢</span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-gray-800">Math Wizards</h3>
+                <p class="text-sm text-gray-500 mb-4">Numbers & Puzzles</p>
+                <a href="math-quiz.html" class="block w-full text-center bg-blue-500 text-white font-bold py-3 rounded-xl">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Word Quest -->
+        <div class="game-card bg-white shadow-md overflow-hidden animate__animated animate__fadeIn">
+            <div class="h-32 bg-gradient-to-r from-amber-400 to-orange-500 flex items-center justify-center">
+                <span class="text-5xl">📚</span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-gray-800">Word Quest</h3>
+                <p class="text-sm text-gray-500 mb-4">Spelling & Words</p>
+                <a href="spelling.html" class="block w-full text-center bg-orange-500 text-white font-bold py-3 rounded-xl">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Shape Sorter -->
+        <div class="game-card bg-white shadow-md overflow-hidden animate__animated animate__fadeIn">
+            <div class="h-32 bg-gradient-to-r from-lime-400 to-green-500 flex items-center justify-center">
+                <span class="text-5xl">🔺</span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-gray-800">Shape Sorter</h3>
+                <p class="text-sm text-gray-500 mb-4">Geometric Fun</p>
+                <a href="shape-sorter.html" class="block w-full text-center bg-green-500 text-white font-bold py-3 rounded-xl">Play Now</a>
+            </div>
+        </div>
+
+        <!-- Memory Match -->
+        <div class="game-card bg-white shadow-md overflow-hidden animate__animated animate__fadeIn">
+            <div class="h-32 bg-gradient-to-r from-red-400 to-yellow-500 flex items-center justify-center">
+                <span class="text-5xl">🤔</span>
+            </div>
+            <div class="p-5">
+                <h3 class="text-xl font-bold text-gray-800">Memory Match</h3>
+                <p class="text-sm text-gray-500 mb-4">Test Your Brain</p>
+                <a href="memory-match.html" class="block w-full text-center bg-yellow-500 text-white font-bold py-3 rounded-xl">Play Now</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="rewards.html" class="nav-item">
+            <span class="nav-icon">🏆</span>
+            <span>Rewards</span>
+        </a>
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span>Progress</span>
+        </a>
+        <a href="story-starter.html" class="nav-item">
+            <span class="nav-icon">✍️</span>
+            <span>Story</span>
+        </a>
+    </nav>
+
+    <!-- Floating Character for Mobile -->
+    <div class="fixed bottom-24 right-4 z-40 opacity-80 pointer-events-none">
+        <object data="character.svg" type="image/svg+xml" width="60" height="60"></object>
+    </div>
+
+    <script src="js/game-utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const starCount = document.getElementById('mobile-stars');
+            if (starCount && window.gameManager) {
+                starCount.textContent = window.gameManager.stars;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Rewards - Playfull Minds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/games.css">
+    <style>
+        .reward-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .badge {
+            opacity: 0.3;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        .badge.earned {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="game-body">
+
+    <!-- Unified Navigation -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-brand text-brand">Playfull Minds</a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-brand font-medium">Games</a>
+                <a href="dashboard.html" class="text-gray-600 hover:text-brand font-medium">Progress</a>
+                <a href="rewards.html" class="text-gray-600 hover:text-brand font-medium border-b-2 border-brand text-brand">Rewards</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="game-container container mx-auto px-6 py-8 text-center">
+        <h1 class="text-5xl md:text-7xl font-brand text-blue-600 mb-4 game-title">My Rewards 🏆</h1>
+        <p class="text-lg text-gray-600 mb-8 game-subtitle">Track your progress and achievements!</p>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="reward-card">
+                <h2 class="text-3xl font-bold mb-2">Total Score</h2>
+                <p id="total-score" class="text-5xl font-brand text-yellow-500">0</p>
+            </div>
+            <div class="reward-card">
+                <h2 class="text-3xl font-bold mb-2">Total Stars</h2>
+                <p id="total-stars" class="text-5xl font-brand text-yellow-500">0</p>
+            </div>
+        </div>
+
+        <h2 class="text-4xl font-brand text-center text-gray-800 mb-8">Badges</h2>
+        <div id="badges-container" class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- Badges will be dynamically inserted here -->
+        </div>
+
+        <a href="index.html" class="back-link mt-12" title="Back to All Games">
+            <span aria-hidden="true">⬅️</span>
+            <span>Back to All Games</span>
+        </a>
+    </div>
+
+    <script src="js/game-utils.js"></script>
+    <script src="js/rewards.js"></script>
+</body>
+</html>
